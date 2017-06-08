@@ -3,201 +3,201 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\40c084a8f37292f2872e0154cc888f2b8aca32b2\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4b948d01b395ef1bb03e021800398f46a91e6b1e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.1\2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0\gson-2.8.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="02a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.8.1_356c937acd8cfe5010c60659f1e3ea716e883ace\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="60165894dc65f7b6d774287486ed326cad3b97ec">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_287f3be4ecba226f572602de6f885da52a33f6ed\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\54f3af73396ee106a85c4e82eace3bc0aeaa38fc\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3cb2e30ff7aa7add9b4f2b6a10fa71987a102b4e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\3927de6aeb111917979da6b452ff08a324d9bcb0\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0968f66b6265fb650d9bd0c6e7045f07c734cf16\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\36dcb5383d5631c4cfdfd49bdec9b3ff35dca7e8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_58f8dcc73ed5fed3e583c5a70b235598dd7b12dc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\d7f89a04d8cc11339b0edccec7927a5215abce6f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_da5398d4297f52d75f3f9917409d499198a83726\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\dc376d5bf7691bd271443009de99c14b85f24611\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e9bb4ec062198ef438d67c0fd8992153e6cba46b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\82f907bbf78176da3387ac9b26e8c7008320907a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e526811b6a5325d170cdec8b120c539f87514cb4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\disklrucache\4.0.0-RC0\46d23cdc19155c5f0d47ece99ca1c421346c1509\disklrucache-4.0.0-RC0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="46d23cdc19155c5f0d47ece99ca1c421346c1509">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\disklrucache-4.0.0-RC0_244578965ac74239f913b41d977a8abe931ad600\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\annotations\4.0.0-RC0\d5dd0afc50069b7fa0fc12ac85f91efa8df4db67\annotations-4.0.0-RC0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d5dd0afc50069b7fa0fc12ac85f91efa8df4db67">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-4.0.0-RC0_eb70fd2a001c5ecf5aa43f72a59fe181a1d62c9c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.7.0\6edbebdd8868708db718d15c09c4b28037fd487e\okhttp-3.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.7.0_88413fec335afd447a07c4a27c32b28cd494e8bf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\780d1ce63e14baed8cb55e0fa07b0a51ceaca405\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_39edae4df41ab456f03c532eafc3f90a67f8fa42\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\4.0.0-RC0\eb86cd1d96acc30dcebf338abaf2c62ca28bf355\glide-4.0.0-RC0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="eb86cd1d96acc30dcebf338abaf2c62ca28bf355">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\glide-4.0.0-RC0_74c11c30ed6abe9ad1b11134c129afbf4804e69d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_093faad6a62bba1596663a61d8552c002b961e21\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\e9eda9f7163c2ac4fe57ca78f523a0c890a89890\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_2a46c5f571da64b421b5431dd31aaeadb8ee3b5b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jar="/Users/Amber/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_8fee46e4b9dc047abeb9eb56fab05f689d157c35\classes.dex" />
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_e7bd74ded9d2db3e96f6849e7663a436209f394b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\3fc9cbe32966b4c5f89fb6000bbc0fcc37b21ec6\output\jars\classes.jar"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/4.0.0-RC0/eb86cd1d96acc30dcebf338abaf2c62ca28bf355/glide-4.0.0-RC0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_28b10d849aa6517eb355cbcb4a21ed575d12c7a6\classes.dex" />
+        sha1="eb86cd1d96acc30dcebf338abaf2c62ca28bf355">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/glide-4.0.0-RC0_dbb8ffb66bb81c3c907096164fa03479f7de55c3/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\gifdecoder\4.0.0-RC0\c64f5d4805b528de434a5a8bb9a8091b6f9cd1a7\gifdecoder-4.0.0-RC0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="c64f5d4805b528de434a5a8bb9a8091b6f9cd1a7">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\gifdecoder-4.0.0-RC0_14e82a7e36f7dd29ea4c106f59403a9003eff47b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.12.0\3742beff8024d0a0073d284b7c5e4cbf73d99b25\okio-1.12.0.jar"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.12.0/3742beff8024d0a0073d284b7c5e4cbf73d99b25/okio-1.12.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3742beff8024d0a0073d284b7c5e4cbf73d99b25">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.12.0_eb4eece66c3e8bde17629b14f57cbf2a135b0dc7\classes.dex" />
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.12.0_ef77697c5e81cad2a79dc08c5330126ad821a228/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\60c19469f3e8b71cc0c5d71707de5c0b652f6f91\output\jars\classes.jar"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.0.0-RC0/46d23cdc19155c5f0d47ece99ca1c421346c1509/disklrucache-4.0.0-RC0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a731cdd5e5aab2ad6f42f906ecdb9a0059dae588\classes.dex" />
+        sha1="46d23cdc19155c5f0d47ece99ca1c421346c1509">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/disklrucache-4.0.0-RC0_5da7efadd9d1fea2fc67952ed8d70bf8cf18e510/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\1be99d49e50d39667a95d9ae93c79af383afb73e\output\jars\classes.jar"
+        jar="/Users/Amber/.android/build-cache/7c54f74c13abf7534812f1ef8086e881745695ba/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_db8afd515e47f55276c817cf92948e09b643fb87/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.0.0-RC0/d5dd0afc50069b7fa0fc12ac85f91efa8df4db67/annotations-4.0.0-RC0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d5dd0afc50069b7fa0fc12ac85f91efa8df4db67">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/annotations-4.0.0-RC0_61c64a68178bdbba5b3a3b391355c6be5680355f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3cc54eebcdc5cc3a6ef0e9e0a07c2663605f5d01/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/e7c2bd59af238798df4f1981934482d5fc62a76e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_001e952403dced32baa145cb17ebaaf03bd95eb9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/5a4e9adb1eb0f04c9d199433ba934c69a889a60d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c34c06a4f5446065720c5e05aa9ad912157a465e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/14832775b89fa5c2cc1f4f6d9d2c333d88c3587d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_97b1877d4ab01005fb53fbae71e7805757fb430b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/1025bc0c83f23d5644c94b2d716b7701bd5138c8/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7f5964130ca729e76ada8a02fb56a2ed29007820/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/9cbb2202c9577c8e54b40d7904442a0df904cef1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_48631adc4a06054e9579d26d836f5eb8fc2ae3f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/gifdecoder/4.0.0-RC0/c64f5d4805b528de434a5a8bb9a8091b6f9cd1a7/gifdecoder-4.0.0-RC0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c64f5d4805b528de434a5a8bb9a8091b6f9cd1a7">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/gifdecoder-4.0.0-RC0_91a3855e40509501012bf8b02f9f6090ab030271/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/8421fb6108fe259cf638a785d1bea368c23ffd7c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_32a2937d8f45be07a2c9ff1044757d8b7837b3ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/47ef87e731916675c20ffe98d2e660debdd126c4/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8acb9afa6f6cdbc777e2a0e2e5f01316e53786b9\classes.dex" />
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7f7ad0e0ee208002a338616998f7870f6ab1c505/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.1/2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0/gson-2.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="02a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.1_d05bd84987d2e37d442ebc4db103108c56c405ed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6d9cc06b5d111dd5717628e0c3bf7be2aacf5508">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_4aed4a16f403211fb3f96ae726a656033be7ddb1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/09c495de1127957e0c2e2829f21e614e6ec58d85/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d0229c9eb0519f526021540872fb6783ab7a1aae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.7.0/6edbebdd8868708db718d15c09c4b28037fd487e/okhttp-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6edbebdd8868708db718d15c09c4b28037fd487e">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.7.0_9b9dcfc8b5b0963227be3cba02f3b59f4d453c05/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/19ec908d04378f2df290b4cd96474ea590fd9dd0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ee2b135ac127a32963857709bc68c87ebdbddbcc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/21b259dfe4d6eb3e4c3f70e3cc85226d2c9b0a1f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_601f662977544afb94f13ceac8e24af8ccf745f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Amber/.android/build-cache/c3c43b71cb004369b587e13acb97e1dc92ece076/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/Amber/AndroidStudioProjects/final-project-flickr-team/flickrviewer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_01e1749e9620edcb682e6759afdeb2aaabcaf852/classes.dex" />
     </item>
 
 </items>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Flickr Viewer</string>
+    <string name="load_error">"Whoops! Couldn't connect to Flickr. Please try again later.</string>
 </resources>

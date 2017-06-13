@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -36,6 +39,9 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         mLoadingBar = (ProgressBar)findViewById(R.id.pb_load_bar);
         mLoadError = (TextView)findViewById(R.id.tv_load_error);
@@ -124,6 +130,29 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     public void onPhotoItemClick(int photoID){
         Intent intent = new Intent(this, PhotoViewActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                return true;
+
+            case R.id.action_favorite:
+                //favorite photo
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

@@ -20,8 +20,15 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
        Toolbar myToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
-       setSupportActionBar(myToolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
     }
 
     /*@Override
@@ -30,12 +37,10 @@ public class SettingsActivity extends AppCompatActivity {
         return true;
     }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
 
-            case R.id.home:
-                return true;
             case R.id.action_settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
@@ -48,5 +53,5 @@ public class SettingsActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 }

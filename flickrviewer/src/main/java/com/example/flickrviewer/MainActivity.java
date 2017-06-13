@@ -1,6 +1,8 @@
 package com.example.flickrviewer;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
@@ -37,11 +39,13 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
         mLoadingBar = (ProgressBar)findViewById(R.id.pb_load_bar);
         mLoadError = (TextView)findViewById(R.id.tv_load_error);

@@ -3,6 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="lightPrimary">#dadedf</color>
+    <color name="lightPrimaryDark">#a7afb2</color>
+    <color name="lightAccent">#6ca6cd</color>
+    <color name="lightWindowBackground">#f2f3f4</color>
+    <color name="lightNagivationBar">#373d3f</color>
 
     <color name="purp_overlay">#2E0854</color>
 </resources>

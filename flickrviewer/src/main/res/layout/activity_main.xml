@@ -8,12 +8,13 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.flickrviewer.MainActivity">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:titleTextColor="@android:color/black"
+        android:background="@android:color/darker_gray"
+        app:titleTextColor="@android:color/white"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">

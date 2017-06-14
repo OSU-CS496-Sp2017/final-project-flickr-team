@@ -9,5 +9,10 @@
     <color name="lightWindowBackground">#f2f3f4</color>
     <color name="lightNagivationBar">#373d3f</color>
 
+    <color name="darkWindow">#111111</color>
+    <color name="darkPrimary">#666666</color>
+    <color name="darkPrimaryDark">#444444</color>
+    <color name="darkNav">#444444</color>
+
     <color name="purp_overlay">#2E0854</color>
 </resources>

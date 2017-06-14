@@ -1,11 +1,14 @@
 package com.example.flickrviewer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,7 +16,9 @@ import android.view.MenuItem;
  * Created by kbajn on 6/12/2017.
  */
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    private static final String TAG = "SettingsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -27,6 +32,10 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
+        //Get shared preferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
         getFragmentManager().beginTransaction().replace(R.id.blankFragment, new SettingsFragment()).commit();
 
     }
@@ -37,12 +46,40 @@ public class SettingsActivity extends AppCompatActivity {
         return true;
     }
 
-    public static class SettingsFragment extends PreferenceFragment {
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
+        Log.d(TAG, "Settings got pref changed");
+    }
+
+    public static class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener{
+
         @Override
         public void onCreate(Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.prefs);
 
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
+            //reset theme
+            Log.d(TAG, "It knows it changed... we need to do something.");
+
+        }
+
+        @Override
+        public void onResume(){
+            super.onResume();
+            Log.d(TAG, "Settings resumed");
+            getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onPause(){
+            super.onPause();
+            Log.d(TAG, "Settings paused");
+
+            getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
         }
     }
 

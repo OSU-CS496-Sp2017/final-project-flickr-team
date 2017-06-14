@@ -1,6 +1,7 @@
 package com.example.flickrviewer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.LoaderManager;
@@ -8,6 +9,7 @@ import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -24,7 +26,7 @@ import com.example.flickrviewer.utils.NetworkUtil;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
-implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhotoItemClickListener{
+implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhotoItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int FLICKR_SEARCH_LOADER_ID = 0;
@@ -46,6 +48,10 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+        //Get shared preferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         mLoadingBar = (ProgressBar)findViewById(R.id.pb_load_bar);
         mLoadError = (TextView)findViewById(R.id.tv_load_error);
@@ -158,6 +164,11 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
+        Log.d(TAG, "Main got pref changed");
     }
 
 }

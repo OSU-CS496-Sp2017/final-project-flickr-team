@@ -27,7 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.blankFragment, new SettingsFragment()).commit();
 
     }
 

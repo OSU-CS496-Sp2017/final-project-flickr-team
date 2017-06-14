@@ -31,7 +31,6 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
-        Log.d(TAG, theme);
 
         if (theme.equals("light")){
             setTheme(R.style.AppTheme);

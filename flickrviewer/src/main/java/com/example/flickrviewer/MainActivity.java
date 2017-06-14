@@ -42,16 +42,40 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+
+        if (theme.equals("light")){
+            setTheme(R.style.AppTheme);
+        }
+        else if (theme.equals("midnight")){
+            setTheme(R.style.AppThemeDark);
+        }
+        else
+            setTheme(R.style.AppThemeFiesta);
+
+        //setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        //myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+        if (theme.equals("light")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        }
+        else if (theme.equals("midnight")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.darkPrimary));
+        }
+        else
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
 
         //Get shared preferences
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        //sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         mLoadingBar = (ProgressBar)findViewById(R.id.pb_load_bar);
         mLoadError = (TextView)findViewById(R.id.tv_load_error);
@@ -169,6 +193,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
         Log.d(TAG, "Main got pref changed");
+        this.recreate();
     }
 
 }

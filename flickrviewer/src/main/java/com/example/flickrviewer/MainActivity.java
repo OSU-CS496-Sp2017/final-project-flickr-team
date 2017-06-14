@@ -151,7 +151,8 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
                 return true;
 
             case R.id.action_favorite:
-                //favorite photo
+                Intent favIntent = new Intent(this, FavActivity.class);
+                startActivity(favIntent);
                 return true;
 
             default:

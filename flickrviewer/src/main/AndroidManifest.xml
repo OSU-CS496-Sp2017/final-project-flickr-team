@@ -35,10 +35,19 @@
             android:parentActivityName=".MainActivity">
 
             <meta-data
-                android:name="android.support.PARENT_AVTIVITY"
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.flickrviewer.MainActivity"/>
+        </activity>
 
+        <!-- Child of main -->
+        <activity
+            android:name=".FavActivity"
+            android:label=""
+            android:parentActivityName=".MainActivity">
 
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.flickrviewer.MainActivity"/>
         </activity>
 
 

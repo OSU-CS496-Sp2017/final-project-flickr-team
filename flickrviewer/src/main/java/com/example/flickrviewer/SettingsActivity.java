@@ -2,6 +2,7 @@ package com.example.flickrviewer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,12 +27,22 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
 
+        getFragmentManager().beginTransaction().replace(android.R.id.content, new SettingsFragment()).commit();
+
     }
 
     @Override
     public boolean onSupportNavigateUp(){
         onBackPressed();
         return true;
+    }
+
+    public static class SettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.prefs);
+        }
     }
 
     /*@Override

@@ -7,6 +7,12 @@
         <item name="android:navigationBarColor">@color/lightPrimary</item>
     </style>
 
+    <style name="SettingsFragmentStyleLight">
+        <item name="android:textColorSecondary">#000</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:background">@color/lightWindowBackground</item>
+    </style>
+
     <!-- Base application theme. -->
     <!-- <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"> -->
         <!-- Customize your theme here. -->

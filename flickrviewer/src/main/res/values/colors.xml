@@ -14,5 +14,10 @@
     <color name="darkPrimaryDark">#444444</color>
     <color name="darkNav">#444444</color>
 
+    <color name="fiestaWindow">#f5d76e</color>
+    <color name="fiestaPrimary">#f1a9a0</color>
+    <color name="fiestaPrimaryDark">#ef4836</color>
+    <color name="fiestaNav">#87d37c</color>
+
     <color name="purp_overlay">#2E0854</color>
 </resources>

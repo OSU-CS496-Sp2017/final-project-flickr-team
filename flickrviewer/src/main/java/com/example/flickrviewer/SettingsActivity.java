@@ -1,7 +1,9 @@
 package com.example.flickrviewer;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.ActionBar;
@@ -20,21 +22,49 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
 
     private static final String TAG = "SettingsActivity";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
-        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+        Log.d(TAG, theme);
+
+        if (theme.equals("light")){
+            setTheme(R.style.AppTheme);
+        }
+        else if (theme.equals("midnight")){
+            setTheme(R.style.AppThemeDark);
+        }
+        else
+            setTheme(R.style.AppThemeFiesta);
+        //setTheme(R.style.AppTheme);
+
         setContentView(R.layout.activity_settings);
 
        Toolbar myToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+        if (theme.equals("light")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        }
+        else if (theme.equals("midnight")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.darkPrimary));
+        }
+        else
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
 
         //Get shared preferences
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        /*SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+        Log.d(TAG, theme);*/
 
         getFragmentManager().beginTransaction().replace(R.id.blankFragment, new SettingsFragment()).commit();
 
@@ -49,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
         Log.d(TAG, "Settings got pref changed");
+        this.recreate();
     }
 
     public static class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener{
@@ -64,6 +95,9 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
             //reset theme
             Log.d(TAG, "It knows it changed... we need to do something.");
+
+            /*String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+            Log.d(TAG, theme); */
 
         }
 
@@ -83,27 +117,4 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
         }
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch (item.getItemId()){
-
-            case R.id.action_settings:
-                Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                startActivity(settingsIntent);
-                return true;
-
-            case R.id.action_favorite:
-                //favorite photo
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
 }

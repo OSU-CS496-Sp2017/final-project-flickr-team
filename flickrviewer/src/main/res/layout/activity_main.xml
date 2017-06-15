@@ -5,16 +5,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.flickrviewer.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.flickrviewer.MainActivity"
+    android:orientation="vertical">
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/darker_gray"
+        app:titleTextColor="@android:color/white"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        </android.support.v7.widget.Toolbar>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!--android:layout_width="match_parent"
+        android:layout_height="match_parent"> -->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_pics"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,5 +46,7 @@
             android:layout_margin="32dp"
             android:layout_gravity="top|center_horizontal"
             android:visibility="invisible"/>
+
     </FrameLayout>
+
 </LinearLayout>

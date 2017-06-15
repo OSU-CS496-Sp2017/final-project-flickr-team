@@ -1,14 +1,21 @@
 package com.example.flickrviewer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,7 +26,7 @@ import com.example.flickrviewer.utils.NetworkUtil;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
-implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhotoItemClickListener{
+implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhotoItemClickListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int FLICKR_SEARCH_LOADER_ID = 0;
@@ -35,7 +42,40 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+
+        if (theme.equals("light")){
+            setTheme(R.style.AppTheme);
+        }
+        else if (theme.equals("midnight")){
+            setTheme(R.style.AppThemeDark);
+        }
+        else
+            setTheme(R.style.AppThemeFiesta);
+
+        //setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_main);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        //myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
+        if (theme.equals("light")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        }
+        else if (theme.equals("midnight")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.darkPrimary));
+        }
+        else
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
+
+        //Get shared preferences
+        //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        //sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
         mLoadingBar = (ProgressBar)findViewById(R.id.pb_load_bar);
         mLoadError = (TextView)findViewById(R.id.tv_load_error);
@@ -124,6 +164,36 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     public void onPhotoItemClick(int photoID){
         Intent intent = new Intent(this, PhotoViewActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                return true;
+
+            case R.id.action_favorite:
+                Intent favIntent = new Intent(this, FavActivity.class);
+                startActivity(favIntent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
+        Log.d(TAG, "Main got pref changed");
+        this.recreate();
     }
 
 }

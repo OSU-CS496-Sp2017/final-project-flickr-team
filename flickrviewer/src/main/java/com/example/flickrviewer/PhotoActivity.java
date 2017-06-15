@@ -26,6 +26,7 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
 
         String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
 
+        //checks for preference and changes theme
         if (theme.equals("light")){
             setTheme(R.style.AppTheme);
         }
@@ -62,7 +63,7 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_photoview, menu);
         return true;
     }
 

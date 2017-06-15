@@ -38,6 +38,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     private TextView mLoadError;
 
     private FlickrPhotoGridAdapater mGrid;
+    private FlickrUtil.FlickrPhoto[] mPics;
 
 
     @Override
@@ -83,7 +84,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
         mPhotoRV = (RecyclerView)findViewById(R.id.rv_pics);
 
         mGrid = new FlickrPhotoGridAdapater(this);
-        mPhotoRV.setLayoutManager(new StaggeredGridLayoutManager(NUM_COLUMNS, StaggeredGridLayoutManager.VERTICAL)); // change num_columns or vertical/horizontal for different aesthetic
+        mPhotoRV.setLayoutManager(new StaggeredGridLayoutManager(NUM_COLUMNS, StaggeredGridLayoutManager.HORIZONTAL)); // change num_columns or vertical/horizontal for different aesthetic
         mPhotoRV.setHasFixedSize(true);
         mPhotoRV.setAdapter(mGrid);
 
@@ -144,8 +145,8 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
         if(data != null){
             mLoadError.setVisibility(View.INVISIBLE);
             mPhotoRV.setVisibility(View.VISIBLE);
-            FlickrUtil.FlickrPhoto[] pics = FlickrUtil.parseFlickrSearchResultsJSON(data);
-            mGrid.updatePhotos(pics);
+            mPics = FlickrUtil.parseFlickrSearchResultsJSON(data);
+            mGrid.updatePhotos(mPics);
         } else{
             mPhotoRV.setVisibility(View.INVISIBLE);
             mLoadError.setVisibility(View.VISIBLE);
@@ -164,7 +165,8 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     @Override
     public void onPhotoItemClick(int photoID){
         Intent intent = new Intent(this, PhotoActivity.class);
-        Log.d(TAG, "We are about to open photoclick intent");
+        intent.putExtra(PhotoActivity.EXTRA_PHOTOS, mPics);
+        intent.putExtra(PhotoActivity.EXTRA_PHOTO_IDX, photoID);
         startActivity(intent);
     }
 

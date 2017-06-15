@@ -1,5 +1,6 @@
 package com.example.flickrviewer;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -8,7 +9,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
@@ -18,7 +22,7 @@ import android.support.v4.app.NavUtils;
  * Created by amber on 6/7/2017.
  */
 
-public class PhotoViewActivity extends AppCompatActivity {
+public class PhotoViewActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     // Hess doesn't have this one full functional so we'll need to implement this more
     // since it's kind of the bulk of our proposed app
@@ -35,6 +39,8 @@ public class PhotoViewActivity extends AppCompatActivity {
     private final Handler mHideHand = new Handler();
     private View mContent;
     private ViewPager mPage;
+    private static final String TAG = "PhotoView";
+
 
     private final Runnable mHidePart2Runnable = new Runnable(){
       @SuppressLint("InlinedAPI")
@@ -83,11 +89,40 @@ public class PhotoViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
+
+        if (theme.equals("light")){
+            setTheme(R.style.AppTheme);
+        }
+        else if (theme.equals("midnight")){
+            setTheme(R.style.AppThemeDark);
+        }
+        else
+            setTheme(R.style.AppThemeFiesta);
+
         setContentView(R.layout.activity_photo_view);
-        ActionBar actionBar = getSupportActionBar();
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        if (theme.equals("light")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        }
+        else if (theme.equals("midnight")){
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.darkPrimary));
+        }
+        else
+            myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
+
+       /* ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        }*/
 
         mPage = (ViewPager)findViewById(R.id.pager);
 
@@ -149,6 +184,18 @@ public class PhotoViewActivity extends AppCompatActivity {
     private void delayedHide(int delayMillis){
         mHideHand.removeCallbacks(mHideRunnable);
         mHideHand.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
+        Log.d(TAG, "Fav got pref changed");
+        this.recreate();
     }
 }
 

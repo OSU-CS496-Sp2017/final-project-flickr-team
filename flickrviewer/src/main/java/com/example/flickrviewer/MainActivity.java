@@ -177,6 +177,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
+
             case R.id.action_settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);

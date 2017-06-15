@@ -62,7 +62,7 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_photoview, menu);
         return true;
     }
 

@@ -20,7 +20,7 @@ import android.view.MenuItem;
 
 public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private static final String TAG = "SettingsActivity";
+    private static final String TAG = "Settings";
 
 
     @Override

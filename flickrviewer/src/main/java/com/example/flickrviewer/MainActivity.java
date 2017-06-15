@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.provider.ContactsContract;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
@@ -162,7 +163,8 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
 
     @Override
     public void onPhotoItemClick(int photoID){
-        Intent intent = new Intent(this, PhotoViewActivity.class);
+        Intent intent = new Intent(this, PhotoActivity.class);
+        Log.d(TAG, "We are about to open photoclick intent");
         startActivity(intent);
     }
 

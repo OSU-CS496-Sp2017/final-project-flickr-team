@@ -26,6 +26,7 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
 
         String theme = sharedPreferences.getString(getString(R.string.pref_color_key), getString(R.string.pref_color_default));
 
+        //checks for preference and changes theme
         if (theme.equals("light")){
             setTheme(R.style.AppTheme);
         }

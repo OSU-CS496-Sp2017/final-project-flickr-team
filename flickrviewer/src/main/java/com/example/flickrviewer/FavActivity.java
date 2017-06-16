@@ -1,11 +1,24 @@
 package com.example.flickrviewer;
 
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.ImageView;
+
+import com.example.flickrviewer.data.FavContract;
+import com.example.flickrviewer.data.FavDBHelper;
+import com.squareup.picasso.Picasso;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kbajn on 6/13/2017.
@@ -14,7 +27,10 @@ import android.util.Log;
 public class FavActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = "Fav";
+    private SQLiteDatabase mDB;
+    private ArrayList<String> urls;
 
+    private RecyclerView mPhotoRV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -35,7 +51,7 @@ public class FavActivity extends AppCompatActivity implements SharedPreferences.
             setTheme(R.style.AppThemeFiesta);
 
 
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_fav);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
         setSupportActionBar(myToolbar);
@@ -50,6 +66,27 @@ public class FavActivity extends AppCompatActivity implements SharedPreferences.
         }
         else
             myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
+
+
+        //DB STUFF
+        FavDBHelper dbHelper = new FavDBHelper(FavActivity.this);
+        mDB = dbHelper.getReadableDatabase();
+
+
+        ///get the url, add it to array to be displayed
+        urls = new ArrayList<String>();
+        Cursor cursor = mDB.query(FavContract.FavoritePhotos.TABLE_NAME, null, null, null, null, null, null);
+        while (cursor.moveToNext()){
+            Log.d(TAG, "IN DB: " + cursor.getString(cursor.getColumnIndex(FavContract.FavoritePhotos.COLUMN_URL)));
+            urls.add(cursor.getString(cursor.getColumnIndex(FavContract.FavoritePhotos.COLUMN_URL)));
+        }
+
+        //Display last favorited image
+        ImageView image = (ImageView)findViewById(R.id.iv_fav);
+        Context context = FavActivity.this;
+        Picasso.with(context).setLoggingEnabled(true);
+        Picasso.with(context).load(urls.get(urls.size() - 1)).into(image);
+
 
     }
 

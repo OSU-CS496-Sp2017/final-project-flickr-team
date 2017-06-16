@@ -1,8 +1,11 @@
 package com.example.flickrviewer;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.NavUtils;
@@ -17,7 +20,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.flickrviewer.data.FavContract;
+import com.example.flickrviewer.data.FavDBHelper;
 import com.example.flickrviewer.utils.FlickrUtil;
 
 /**
@@ -32,6 +38,8 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
     private ViewPager mPager;
     private FlickrPhotoPagerAdapter mAdapter;
     private View mContentView;
+    private String picURL;
+    private SQLiteDatabase mDB;
 
 
     @Override
@@ -74,11 +82,12 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
             FlickrUtil.FlickrPhoto[] photos = (FlickrUtil.FlickrPhoto[])intent.getSerializableExtra(EXTRA_PHOTOS);
             mAdapter.updatePics(photos);
             mPager.setCurrentItem(intent.getIntExtra(EXTRA_PHOTO_IDX, 0));
+
+            //set url to add to database
+            picURL = photos[mPager.getCurrentItem()].url_m.toString();
         }
 
         mContentView = findViewById(R.id.fullscreen_content);
-
-
 
         if (theme.equals("light")){
             myToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -89,6 +98,10 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
         else {
             myToolbar.setBackgroundColor(getResources().getColor(R.color.fiestaPrimary));
         }
+
+        //DB STUFF
+        FavDBHelper dbHelper = new FavDBHelper(PhotoActivity.this);
+        mDB = dbHelper.getWritableDatabase();
     }
 
 
@@ -108,6 +121,12 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
+            case R.id.action_fav:
+                Toast.makeText(PhotoActivity.this, "Added to favorites.", Toast.LENGTH_LONG).show();
+                Log.d(TAG, picURL);
+                addPhotoToDB();
+                return true;
+
             case R.id.action_settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
@@ -125,9 +144,25 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
         }
     }
 
+    private long addPhotoToDB(){
+        if (picURL != null){
+            ContentValues values = new ContentValues();
+            values.put(FavContract.FavoritePhotos.COLUMN_URL, picURL);
+            return mDB.insert(FavContract.FavoritePhotos.TABLE_NAME, null, values);
+        }
+        else
+            return -1;
+    }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key){
         Log.d(TAG, "Photo got pref changed");
         this.recreate();
+    }
+
+    @Override
+    protected void onDestroy(){
+        mDB.close();
+        super.onDestroy();
     }
 }

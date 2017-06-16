@@ -1,5 +1,7 @@
 package com.example.flickrviewer;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -12,10 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -32,6 +36,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final int FLICKR_SEARCH_LOADER_ID = 0;
     private static final int NUM_COLUMNS = 1;
+    private static final String SEARCH_PARAM = "SEARCH";
 
     private RecyclerView mPhotoRV;
     private ProgressBar mLoadingBar;
@@ -88,10 +93,31 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
         mPhotoRV.setHasFixedSize(true);
         mPhotoRV.setAdapter(mGrid);
 
-        getSupportLoaderManager().initLoader(FLICKR_SEARCH_LOADER_ID, null, this);
+        Bundle args = new Bundle();
+
+        args.putString(SEARCH_PARAM, null);
+
+        getSupportLoaderManager().initLoader(FLICKR_SEARCH_LOADER_ID, args, this);
+
+        handleIntent(getIntent());
 
         Log.d(TAG, "in main, finished onCreate");
 
+    }
+
+    public void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            Log.d(TAG, "We in search?");
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Log.d(TAG, "here's param here + " + query);
+            FlickrUtil.setFlickrApiMethod("flickr.photos.search");
+            Bundle args = new Bundle();
+            args.putString(SEARCH_PARAM, query);
+            getSupportLoaderManager().restartLoader(FLICKR_SEARCH_LOADER_ID, args, this);
+        }
+        else{
+            FlickrUtil.setFlickrApiMethod("flickr.photos.getRecent");
+        }
     }
 
     /*
@@ -99,7 +125,7 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
      */
 
     @Override
-    public Loader<String> onCreateLoader(int id, Bundle args){
+    public Loader<String> onCreateLoader(int id, final Bundle args){
         return new AsyncTaskLoader<String>(this) {
 
             String mJSONResults;
@@ -116,7 +142,8 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
 
             @Override
             public String loadInBackground() {
-                String flickrURL = FlickrUtil.buildFlickrSearchURL();
+                String params = args.getString(SEARCH_PARAM);
+                String flickrURL = FlickrUtil.buildFlickrSearchURL(params);
                 String results = null;
                 try{
                     results = NetworkUtil.doGet(flickrURL);
@@ -172,7 +199,12 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
+        SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView)menu.findItem(R.id.search_bar).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 

@@ -8,4 +8,6 @@
     <string name="pref_color_key">pref_color</string>
     <string name="pref_color_title">Color Theme</string>
     <string name="pref_color_default">light</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search for photos here</string>
 </resources>

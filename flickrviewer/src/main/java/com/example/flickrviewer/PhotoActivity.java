@@ -62,19 +62,12 @@ public class PhotoActivity extends AppCompatActivity implements SharedPreference
         if(actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
-        }else{
-            Log.d("photoActivity", "actionBar is null for some reason");
         }
-
 
         mAdapter = new FlickrPhotoPagerAdapter(getSupportFragmentManager());
-        if(mAdapter == null){
-            Log.d("photoActivity", "why are you null");
-        }
+
         mPager = (ViewPager)findViewById(R.id.pager);
-        if(mPager == null){
-            Log.d("photoActivity", "hey.... why is mpage null");
-        }
+
         mPager.setAdapter(mAdapter);
         Intent intent = getIntent();
         if(intent != null && intent.hasExtra(EXTRA_PHOTOS)){

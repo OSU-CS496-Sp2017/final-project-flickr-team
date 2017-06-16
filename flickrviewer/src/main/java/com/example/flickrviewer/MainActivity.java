@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.provider.ContactsContract;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.app.NavUtils;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -220,6 +221,10 @@ implements LoaderManager.LoaderCallbacks<String>, FlickrPhotoGridAdapater.OnPhot
             case R.id.action_favorite:
                 Intent favIntent = new Intent(this, FavActivity.class);
                 startActivity(favIntent);
+                return true;
+
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
                 return true;
 
             default:

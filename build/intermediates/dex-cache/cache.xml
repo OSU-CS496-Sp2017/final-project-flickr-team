@@ -3,39 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\kbajn\Documents\final-project-flickr-team\flickrviewer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_093faad6a62bba1596663a61d8552c002b961e21\classes.dex" />
+        sha1="5ee46b75934a0bf7bb0c2aaf7a758569c5e13017">
+        <dex dex="C:\Users\kbajn\Documents\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_798e5dca74350f0f9153242983d9db33e979110c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\7ff3a52873df058f4528517e77099604491c967f\output\jars\classes.jar"
+        jar="C:\Users\kbajn\Documents\final-project-flickr-team\flickrviewer\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="536228b2496030d983d01856aa56b4d71b57d0db">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_192a36fd44417ba695334d283826768610717a82\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\.android\build-cache\bc78f2ba17b4dca6553c811b84cabf5403ec96fa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="2e46d498b78635da65dc4a0e4c26de85e5c45c83">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10\classes_251baa8503e230c6cfd00a90b0c2164d8f5d4bf9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="b598eeffb0b8bb4b08c16060b6854b131e5f5ac7">
-        <dex dex="C:\Users\amber\StudioProjects\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_287f3be4ecba226f572602de6f885da52a33f6ed\classes.dex" />
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="C:\Users\kbajn\Documents\final-project-flickr-team\flickrviewer\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d40b605c56911b75476ec7eaa8bc85e513181b9e\classes.dex" />
     </item>
 
 </items>
